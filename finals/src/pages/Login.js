@@ -3,18 +3,17 @@ import "./Login.css";
 export default function Login() {
   return (
     <>
-      <div className="parent-container">
+      <div className="login-parent-container">
         <form className="form-container">
           <h1 className="form-title">Login to Santayo</h1>
           <div className="email-container">
-            <label>Enter your email:</label>
-            <input type="email"></input>
+            <input type="email" placeholder="Email"></input>
           </div>
           <div className="password-container">
-            <label>Enter your password:</label>
-            <input type="password"></input>
+            <input type="password" placeholder="Password"></input>
           </div>
           <button>Login</button>
+          <p>Don't have an account yet? Register here!</p>
         </form>
       </div>
     </>
