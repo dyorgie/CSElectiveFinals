@@ -1,19 +1,43 @@
+import React, { useState, useRef } from "react";
 import "./Login.css";
+import { Navigate, useNavigate } from "react-router-dom";
+
+import { login } from "../services/authServices";
 
 export default function Login() {
+  const email = useRef();
+  const password = useRef();
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    login(email.current.value, password.current.value)
+      .then(() => {
+        Navigate("/about");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
   return (
     <>
       <div className="login-parent-container">
-        <form className="form-container">
+        <form className="form-container" onSubmit={handleSubmit}>
           <h1 className="form-title">Login to Santayo</h1>
           <div className="email-container">
-            <input type="email" placeholder="Email"></input>
+            <input type="email" placeholder="Email" ref={email}></input>
           </div>
           <div className="password-container">
-            <input type="password" placeholder="Password"></input>
+            <input
+              type="password"
+              placeholder="Password"
+              ref={password}
+            ></input>
           </div>
           <button>Login</button>
           <p>Don't have an account yet? Register here!</p>
+          {error && <p>{error}</p>}
         </form>
       </div>
     </>
