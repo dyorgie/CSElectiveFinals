@@ -2,7 +2,7 @@ import "./Register.css";
 import { useRef, useState } from "react";
 
 import { create_user } from "../services/authServices";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Register() {
   const usernameRef = useRef();
@@ -50,6 +50,10 @@ export default function Register() {
           <button>Sign up</button>
 
           {error && <p>{error}</p>}
+
+          <p>
+            Already have an account? <NavLink to="/login">Login Here!</NavLink>
+          </p>
         </form>
       </div>
     </>
