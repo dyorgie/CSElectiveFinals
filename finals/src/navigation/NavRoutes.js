@@ -12,23 +12,11 @@ export default function NavRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
-      <Route
-        path="/about"
-        element={user ? <About /> : <Navigate to="/login" />}
-      />
-      <Route
-        path="/contact"
-        element={user ? <Contact /> : <Navigate to="/login" />}
-      />
-      <Route
-        path="/register"
-        element={user ? <Register /> : <Navigate to="/login" />}
-      />
-      <Route
-        path="/login"
-        element={user ? <Login /> : <Navigate to="/login" />}
-      />
+      <Route path="/" element={user ? <Home /> : <Login />} />
+      <Route path="/about" element={user ? <About /> : <Login />} />
+      <Route path="/contact" element={user ? <Contact /> : <Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
