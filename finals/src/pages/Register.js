@@ -19,7 +19,7 @@ export default function Register() {
         passwordRef.current.value,
         usernameRef.current.value
       );
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     }
