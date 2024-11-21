@@ -25,6 +25,7 @@ export default function Login() {
       <div className="login-parent-container">
         <div className="login-child-container">
         <form className="form-container" onSubmit={handleSubmit}>
+          <div className="closeBtn-cont"><NavLink to="/"><p className="closeBtn">x</p></NavLink></div>
           <h1 className="form-title">Login to Santayo</h1>
           <div className="email-container">
             <input type="email" placeholder="Email" ref={email}></input>
@@ -36,7 +37,7 @@ export default function Login() {
               ref={password}
             ></input>
           </div>
-          <button>Login</button>
+          <button className="loginBtn" type="submit">Login</button>
           <NavLink to="/register"><p>Don't have an account yet? Register here!</p></NavLink>
           {error && <p>{error}</p>}
         </form>

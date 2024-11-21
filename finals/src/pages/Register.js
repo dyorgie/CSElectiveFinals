@@ -29,6 +29,7 @@ export default function Register() {
       <div className="register-parent-container">
     
         <form className="register-form-container" onSubmit={handleSubmit}>
+        <div className="closeBtn-cont"><NavLink to="/"><p className="closeBtn">x</p></NavLink></div>
           <h1 className="registerForm-title">Register to Santayo</h1>
           <div className="register-email-container">
             <input type="email" placeholder="email" ref={emailRef}></input>
