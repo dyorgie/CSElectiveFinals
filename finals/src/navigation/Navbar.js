@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import "../navigation/Navbar.css";
@@ -15,12 +15,13 @@ export default function Navbar() {
 
   return (
     <nav>
-      <h1>Santayo</h1>
+      <NavLink>Santayo, {user.displayName}</NavLink>
 
       {user && (
         <>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
+          <NavLink to="/carinderia">Carinderias</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </>
       )}
@@ -34,7 +35,6 @@ export default function Navbar() {
 
       {user && (
         <>
-          Hello, {user.displayName}
           <button className="btn" onClick={handleLogout}>
             Logout
           </button>
