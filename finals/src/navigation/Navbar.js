@@ -15,31 +15,49 @@ export default function Navbar() {
 
   return (
     <nav>
-      <NavLink>Santayo, {user.displayName}</NavLink>
+      <div className="nav-container">
+        <NavLink to="/">Santayo, {user.displayName}</NavLink>
 
-      {user && (
-        <>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/carinderia">Carinderias</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-        </>
-      )}
+        {user && (
+          <>
+            <NavLink to="/" className="nav-link" activeClassName="active">
+              Home
+            </NavLink>
+            <NavLink to="/about" className="nav-link" activeClassName="active">
+              About
+            </NavLink>
+            <NavLink
+              to="/carinderia"
+              className="nav-link"
+              activeClassName="active"
+            >
+              Carinderias
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className="nav-link"
+              activeClassName="active"
+            >
+              Contact
+            </NavLink>
+          </>
+        )}
 
-      {!user && (
-        <>
-          <NavLink to="/login">Login</NavLink>
-          <NavLink to="/register">Register</NavLink>
-        </>
-      )}
+        {!user && (
+          <>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/register">Register</NavLink>
+          </>
+        )}
 
-      {user && (
-        <>
-          <button className="btn" onClick={handleLogout}>
-            Logout
-          </button>
-        </>
-      )}
+        {user && (
+          <>
+            <button className="btn" onClick={handleLogout}>
+              Logout
+            </button>
+          </>
+        )}
+      </div>
     </nav>
   );
 }
