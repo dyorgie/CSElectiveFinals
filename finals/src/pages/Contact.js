@@ -1,10 +1,32 @@
 import "./Contact.css";
+import contactCover from "../images/contact-cover.png";
+import { addReview } from "../services/reviewService";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const review = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      message: messageRef.current.value,
+    };
+
+    addReview(review);
+    navigate("/");
+  };
+
   return (
     <>
       <img
-        // src={contactCover}
+        src={contactCover}
         alt="contact cover"
         className="contact-cover"
       ></img>
@@ -13,7 +35,7 @@ export default function Contact() {
       </div>
       <div className="contact-container"></div>
 
-      <form className="contact-form">
+      <form className="contact-form" onSubmit={handleSubmit}>
         <div className="input-box">
           <label className="nameLabel">Name</label>
           <input
@@ -21,6 +43,7 @@ export default function Contact() {
             className="field"
             placeholder="Enter your name"
             required
+            ref={nameRef}
           ></input>
         </div>
 
@@ -31,6 +54,7 @@ export default function Contact() {
             className="field"
             placeholder="Enter your email address"
             required
+            ref={emailRef}
           ></input>
         </div>
 
@@ -42,9 +66,10 @@ export default function Contact() {
             className="fieldMessage"
             placeholder="Enter your message"
             required
+            ref={messageRef}
           ></textarea>
         </div>
-        <button type="submit">Send Message</button>
+        <button>Send Message</button>
       </form>
     </>
   );

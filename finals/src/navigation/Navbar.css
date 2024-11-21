@@ -1,3 +1,85 @@
-nav{
-    z-index: 4;
+* {
+  box-sizing: border-box;
+}
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-family: "Alice", serif;
+  margin-right: 20px;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: color 0.3s ease;
+  opacity: 0.75;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 0;
+  max-width: 80%;
+  height: 2px;
+  background-color: rgb(220, 68, 22, 85%);
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+.nav-link.active {
+  opacity: 1;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.loginBtn {
+  border: none;
+  cursor: pointer;
+  font-family: "Alice", serif;
+  background-color: rgb(220, 68, 22, 85%);
+  color: white;
+  font-size: 15px;
+  border-radius: 1px;
+}
+
+.navbar {
+  z-index: 4;
+  background-color: transparent !important;
+  border: none;
+}
+
+.loginBtn:hover {
+  background-color: rgba(194, 59, 18, 0.85);
+}
+
+.offcanvas {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  background-color: rgb(12, 12, 12) !important;
+}
+
+.offcanvas.show {
+  transform: translateX(0);
+}
+
+.offcanvas .nav-link,
+.offcanvas .btn-close {
+  color: white !important;
+}
+
+.offcanvas .offcanvas-title {
+  color: white;
+}
+.offcanvas .btn-close {
+  filter: invert(1);
 }
