@@ -11,7 +11,6 @@ export default function NavRoutes() {
   const { user } = useContext(UserContext);
 
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={user ? <About /> : <Navigate to="/login" />} />
@@ -19,6 +18,5 @@ export default function NavRoutes() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-    </BrowserRouter>
   );
 }

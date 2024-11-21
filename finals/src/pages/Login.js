@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Login.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 
 import { login } from "../services/authServices";
 
@@ -23,6 +23,7 @@ export default function Login() {
   return (
     <>
       <div className="login-parent-container">
+        <div className="login-child-container">
         <form className="form-container" onSubmit={handleSubmit}>
           <h1 className="form-title">Login to Santayo</h1>
           <div className="email-container">
@@ -36,9 +37,10 @@ export default function Login() {
             ></input>
           </div>
           <button>Login</button>
-          <p>Don't have an account yet? Register here!</p>
+          <NavLink to="/register"><p>Don't have an account yet? Register here!</p></NavLink>
           {error && <p>{error}</p>}
         </form>
+        </div>
       </div>
     </>
   );
