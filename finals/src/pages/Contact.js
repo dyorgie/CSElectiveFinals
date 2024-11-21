@@ -2,11 +2,14 @@ import "./Contact.css";
 import contactCover from "../images/contact-cover.png";
 import { addReview } from "../services/reviewService";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
   const nameRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +18,9 @@ export default function Contact() {
       email: emailRef.current.value,
       message: messageRef.current.value,
     };
+
     addReview(review);
+    navigate("/");
   };
 
   return (
@@ -64,7 +69,7 @@ export default function Contact() {
             ref={messageRef}
           ></textarea>
         </div>
-        <button type="submit">Send Message</button>
+        <button>Send Message</button>
       </form>
     </>
   );
