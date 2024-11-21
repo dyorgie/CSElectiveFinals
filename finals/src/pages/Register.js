@@ -2,7 +2,7 @@ import "./Register.css";
 import { useRef, useState } from "react";
 
 import { create_user } from "../services/authServices";
-import { Navigate } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 
 export default function Register() {
   const usernameRef = useRef();
@@ -27,6 +27,7 @@ export default function Register() {
   return (
     <>
       <div className="register-parent-container">
+    
         <form className="register-form-container" onSubmit={handleSubmit}>
           <h1 className="registerForm-title">Register to Santayo</h1>
           <div className="register-email-container">
@@ -46,7 +47,7 @@ export default function Register() {
           </div>
 
           <button>Sign up</button>
-          <p>Already have an account? Login here!</p>
+          <NavLink to="/login"><p>Already have an account? Login here!</p></NavLink>
           {error && <p>{error}</p>}
         </form>
       </div>
