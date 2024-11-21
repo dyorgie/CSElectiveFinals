@@ -1,20 +1,20 @@
 import "./App.css";
-
-import Login from "./pages/Login";
-import Navbar from "./navigation/Navbar";
-import NavRoutes from "./navigation/NavRoutes";
-
-import { UserProvider } from "./context/UserContext";
 import { BrowserRouter } from "react-router-dom";
+import NavRoutes from "./navigation/NavRoutes";
+import { UserProvider } from "./context/UserContext";
+import Navbar from "./navigation/Navbar";
+
+import About from "./pages/About";
 
 function App() {
   return (
-    <BrowserRouter>
-      <UserProvider>
-        <Navbar />
-        <NavRoutes />
-      </UserProvider>
-    </BrowserRouter>
+    <UserProvider>
+      <div className="App">
+        <BrowserRouter>
+          <About></About>
+        </BrowserRouter>
+      </div>
+    </UserProvider>
   );
 }
 
