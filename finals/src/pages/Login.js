@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { login } from "../services/authServices";
 
@@ -42,6 +42,11 @@ export default function Login() {
               Login
             </button>
             {error && <p>{error}</p>}
+
+            <p>
+              Don't have an account?{" "}
+              <NavLink to="/register">Register Here!</NavLink>
+            </p>
           </form>
         </div>
       </div>
