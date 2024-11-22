@@ -29,11 +29,7 @@
 }
 
 .register-form-container {
-<<<<<<< HEAD
   position: absolute;
-=======
-  position: relative;
->>>>>>> ab6ef0b32231f101f3fca9a3fcf607a0fd6be420
   background-color: rgba(235, 115, 17, 1);
   border-radius: 10px;
   border: 8px;

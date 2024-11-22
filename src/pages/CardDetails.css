@@ -27,10 +27,6 @@
 
 .bi-arrow-left{
     font-size: 190%;
-<<<<<<< HEAD
-=======
-
->>>>>>> ab6ef0b32231f101f3fca9a3fcf607a0fd6be420
     margin:0 50px;
     color:rgb(220,68,22,85%) ;
     cursor: pointer;
@@ -73,7 +69,6 @@
     margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
 .cart-list {
     margin-top: 20px;
 }
@@ -89,8 +84,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-=======
->>>>>>> ab6ef0b32231f101f3fca9a3fcf607a0fd6be420
 button {
     background-color: #007bff;
     color: white;
@@ -104,13 +97,10 @@ button:hover {
     background-color: #0056b3;
 }
 
-<<<<<<< HEAD
 button:focus {
     outline: none;
 }
 
-=======
->>>>>>> ab6ef0b32231f101f3fca9a3fcf607a0fd6be420
 #map {
     height: 300px;
     margin-top: 20px;
