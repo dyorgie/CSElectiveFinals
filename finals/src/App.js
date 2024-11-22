@@ -1,13 +1,19 @@
 import "./App.css";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-
+import { BrowserRouter } from "react-router-dom";
+import NavRoutes from "./navigation/NavRoutes";
+import { UserProvider } from "./context/UserContext";
+import Navbar from "./navigation/Navbar";
 
 function App() {
   return (
-    <>
-      <Register></Register>
-    </>
+    <UserProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Navbar></Navbar>
+          <NavRoutes></NavRoutes>
+        </BrowserRouter>
+      </div>
+    </UserProvider>
   );
 }
 
