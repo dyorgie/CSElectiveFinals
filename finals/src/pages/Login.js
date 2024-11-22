@@ -8,15 +8,18 @@ export default function Login() {
   const email = useRef();
   const password = useRef();
   const [error, setError] = useState(null);
+  const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     login(email.current.value, password.current.value)
       .then(() => {
+        setIsPending(false);
         navigate("/");
       })
       .catch((error) => {
+        setIsPending(false);
         setError(error.message);
       });
   };
@@ -37,14 +40,27 @@ export default function Login() {
                 ref={password}
               ></input>
             </div>
-            <button className="loginBtn" type="submit">
-              Login
-            </button>
+            {!isPending && (
+              <>
+                <button className="loginBtn" type="submit">
+                  Login
+                </button>
+              </>
+            )}
+
+            {isPending && (
+              <button className="loginBtn" disabled>
+                Loading...
+              </button>
+            )}
+
             {error && <p>{error}</p>}
 
-            <p style={{fontFamily:"Lato, serif", color:"white"}}>
+            <p style={{ fontFamily: "Lato, serif", color: "white" }}>
               Don't have an account?{" "}
-              <NavLink to="/register" style={{color:"white"}}>Register Here!</NavLink>
+              <NavLink to="/register" style={{ color: "white" }}>
+                Register Here!
+              </NavLink>
             </p>
           </form>
         </div>
