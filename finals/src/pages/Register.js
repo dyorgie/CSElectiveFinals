@@ -32,27 +32,27 @@ export default function Register() {
           <div className="closeBtn-cont"></div>
           <h1 className="registerForm-title">Register to Santayo</h1>
           <div className="register-email-container">
-            <input type="email" placeholder="email" ref={emailRef}></input>
+            <input type="email" placeholder="Email" ref={emailRef}></input>
           </div>
 
           <div className="register-password-container">
             <input
               type="password"
-              placeholder="password"
+              placeholder="Password"
               ref={passwordRef}
             ></input>
           </div>
 
           <div className="username-container">
-            <input type="text" placeholder="username" ref={usernameRef}></input>
+            <input type="text" placeholder="Username" ref={usernameRef}></input>
           </div>
 
           <button>Sign up</button>
 
           {error && <p>{error}</p>}
 
-          <p>
-            Already have an account? <NavLink to="/login">Login Here!</NavLink>
+          <p style={{color:"white", fontFamily:"Lato, serif"}}>
+            Already have an account? <NavLink to="/login" style={{color:"white"}}>Login Here!</NavLink>
           </p>
         </form>
       </div>

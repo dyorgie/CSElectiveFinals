@@ -8,13 +8,14 @@
 }
 
 .btn-custom {
-  --bs-btn-padding-x: 4rem;
-  --bs-btn-padding-y: 1rem;
+  padding:1rem 3rem;
   color: white;
   background-color: rgb(220, 68, 22, 85%);
   border-radius: 2px;
   font-family: "Alice", serif;
   transition: 0.5s ease;
+  cursor: pointer;
+  border:0;
 }
 
 .btn-custom:hover {
