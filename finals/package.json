@@ -6,24 +6,17 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
-<<<<<<< HEAD
-    "@react-google-maps/api": "^2.20.3",
-=======
->>>>>>> ab6ef0b32231f101f3fca9a3fcf607a0fd6be420
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-<<<<<<< HEAD
     "firebase": "^11.0.2",
     "firebase-admin": "^13.0.1",
-=======
-    "firebase": "^9.23.0",
->>>>>>> ab6ef0b32231f101f3fca9a3fcf607a0fd6be420
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
+
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
