@@ -27,7 +27,6 @@
 
 .bi-arrow-left{
     font-size: 190%;
-
     margin:0 50px;
     color:rgb(220,68,22,85%) ;
     cursor: pointer;
@@ -70,6 +69,21 @@
     margin-bottom: 10px;
 }
 
+.cart-list {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 button {
     background-color: #007bff;
     color: white;
@@ -81,6 +95,10 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
 }
 
 #map {

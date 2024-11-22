@@ -31,7 +31,7 @@ export default function Navbar() {
                   About
                 </NavLink>
                 <NavLink
-                  to="/carinderia"
+                  to="/carinderias"
                   className="nav-link"
                   activeClassName="active"
                 >

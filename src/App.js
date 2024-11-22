@@ -9,12 +9,12 @@ function App() {
   return (
     <UserProvider>
       <CartProvider>
-      <div className="App">
-        <BrowserRouter>
-          <Navbar></Navbar>
-          <NavRoutes></NavRoutes>
-        </BrowserRouter>
-      </div>
+        <div className="App">
+          <BrowserRouter>
+            <Navbar />
+            <NavRoutes />
+          </BrowserRouter>
+        </div>
       </CartProvider>
     </UserProvider>
   );

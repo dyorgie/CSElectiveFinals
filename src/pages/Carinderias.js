@@ -258,7 +258,7 @@ export default function Carinderias() {
         <div className='carinderia-container'>
             <div className="card-container">
                 {cards.map((card) => (
-                    <Link to={`/card/${card.id}`} key={card.id} className="card">
+                    <Link to={`/carinderias/${card.id}`} key={card.id} className="card">
                         <img src={card.image} alt={card.title} className="card-image" />
                         <h3>{card.title}</h3>
                         <p>{card.description}</p>
