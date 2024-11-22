@@ -1,10 +1,10 @@
-import pula from './images/pula.png';
-import pares from './images/pares.png';
-import rainbow from './images/rainbow.png';
-import AandA from './images/AandA.png';
+import pula from '../images/pula.png';
+import pares from '../images/pares.png';
+import rainbow from '../images/rainbow.png';
+import AandA from '../images/AandA.png';
 import { Link } from "react-router-dom";
 import "./Carinderias.css";
-import carinderiaCover from "./images/carinderia-cover.png"
+import carinderiaCover from "../images/carinderia-cover.png"
 
 const cards = [ 
     { 

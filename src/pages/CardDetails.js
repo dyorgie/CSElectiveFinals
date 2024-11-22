@@ -11,75 +11,7 @@ import { Link } from "react-router-dom";
 function CardDetails() {
     const { id } = useParams();
     const cardDetail = carinderiaData.find(card => card.id === Number(id));
-    const [userCart, setUserCart] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    const user = auth.currentUser;
-
-    //fetch the user's cart from firestore
-    useEffect(() => {
-        if (user) {
-            const fetchCart = async () => {
-                const userDoc = doc(db, 'users', user.uid);
-                const userData = await getDoc(userDoc);
-
-                if (userData.exists()) {
-                    setUserCart(userData.data().cart || []);
-                }
-                setLoading(false);
-            };
-            fetchCart();
-        } else {
-            setLoading(false);
-        }
-    }, [user]);
-
-
-    //adding item to cart
-    const addToCart = async (item) => {
-        if (!user) {
-            alert('You must be logged in to add items to the cart.');
-            return;
-        }
-        const itemToAdd = {
-            itemName: item.item,
-            price: item.price,
-            quantity: 1,
-        };
-
-        try {
-            const userDoc = doc(db, 'users', user.uid);
-            const userData = await getDoc(userDoc);
-                
-                //has a cart and will update
-            if (userData.exists()) {
-                const currentCart = userData.data().cart || [];
-                const existingItemIndex = currentCart.findIndex(cartItem => cartItem.itemName === itemToAdd.itemName);
-
-                //item exists, updates the quantity
-                if (existingItemIndex !== -1) {
-                    currentCart[existingItemIndex].quantity += 1;
-                    await updateDoc(userDoc, {
-                        cart: currentCart,
-                    });
-                //new item to add to cart
-                } else {
-                    await updateDoc(userDoc, {
-                        cart: arrayUnion(itemToAdd),
-                    });
-                }
-                //no user data, new cart
-            } else { 
-                await setDoc(userDoc, {
-                    cart: [itemToAdd],
-                });
-            }
-            setUserCart((prevCart) => [...prevCart, itemToAdd]);
-        } catch (error) {
-            console.error('Error adding to cart: ', error);
-        }
-    };
-
+    
     // starting coordinates
     const fallbackLat = 14.629463;
     const fallbackLng = 121.041962;
