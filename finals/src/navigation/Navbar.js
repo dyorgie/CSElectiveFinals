@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="nav-container">
         <div className="nav-child-cont">
           <div>
-            <NavLink to="/" className="logo">Santayo{user ? `, ${user.displayName}` : ""}</NavLink>
+            <NavLink to="/" className="logo">SANTAYO</NavLink>
           </div>
        
         <div style={{marginTop:"8px"}}>
@@ -57,9 +57,15 @@ export default function Navbar() {
 
             {user && (
               <>
-                <button className="logoutBtn" onClick={handleLogout}>
-                  Logout
-                </button>
+                <div className="dropdown">
+                  <span className="username">{user ? `Santayo, ${user.displayName}?` : ""} <i class="bi bi-chevron-down" style={{fontSize:"15px"}}></i></span>
+                  <div class="dropdown-content">
+                    <button className="logoutBtn" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </div>
+                </div>
+               
               </>
             )}
         </div>
