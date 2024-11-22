@@ -23,6 +23,7 @@
   font-family: "Playfair Display", serif;
   color:white;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.425);
+  margin-top:15%;
 }
 
 .form-container {
@@ -30,7 +31,8 @@
   border-radius: 2px;
   border: 8px;
   width: 360px;
-  padding: 70px 40px;
+  max-height:500px;
+  padding:40px;
   animation: "dropTop .3s linear";
   position:absolute;
   top:50%;
