@@ -1,8 +1,6 @@
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { carinderiaData } from './Carinderias';
-import { db, auth } from './firebaseConfig';
-import { doc, setDoc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import "./CardDetails.css";
 import Review from "./Review";
 import { Link } from "react-router-dom";
@@ -105,8 +103,9 @@ function CardDetails() {
                                 <h4 className="category-title">{category.category}</h4>
                                 {category.items.map((menuItem, index) => (
                                     <div key={index} className="menu-card">
-                                        <p className="menu-item">{menuItem.item}</p>
-                                        <p className="price">{menuItem.price}</p>
+                                        <div className="menu-item">
+                                            <p>{menuItem.item} - <span className="price">{menuItem.price}</span></p>
+                                        </div>
                                         <button onClick={() => addToCart(menuItem)}>Add to Cart</button>
                                     </div>
                                 ))}

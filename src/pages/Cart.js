@@ -1,48 +1,53 @@
-import React, { useState, useEffect } from "react";
-import { db, auth } from "./firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
+import React, { useEffect } from "react";
+import { useCartContext } from "../contexts/CartContext"; // import context
+import "./Cart.css"; // CSS file for styling
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const user = auth.currentUser;
-
-  useEffect(() => {
-    if (user) {
-      const fetchCart = async () => {
-        const userDoc = doc(db, "users", user.uid);
-        const userData = await getDoc(userDoc);
-        if (userData.exists()) {
-          setCartItems(userData.data().cart || []);
-        }
-        setLoading(false);
-      };
-
-      fetchCart();
-    } else {
-      setLoading(false);
-    }
-  }, [user]);
+  const { cart, addToCart } = useCartContext(); // Use the context
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
-    <div>
-      <h2>Your Cart</h2>
-      {loading ? (
-        <p>Loading cart...</p>
+    <div className="cart-container">
+      <h1 className="cart-title">Your Cart</h1>
+      {cart.length === 0 ? (
+        <p>Your cart is empty!</p>
       ) : (
-        <div>
-          {cartItems.length > 0 ? (
-            cartItems.map((item, index) => (
-              <div key={index}>
-                <p>{item.itemName}</p>
-                <p>{item.price}</p>
-                <p>Quantity: {item.quantity}</p>
+        <div className="cart-items-container">
+          {cart.map((item, index) => (
+            <div key={index} className="cart-item">
+              <div className="cart-item-details">
+                <img
+                  src={item.image} // Assuming `item.image` is the path to the image
+                  alt={item.itemName}
+                  className="cart-item-image"
+                />
+                <div className="cart-item-info">
+                  <h3 className="cart-item-title">{item.itemName}</h3>
+                  <p className="cart-item-price">Price: ₱{item.price}</p>
+                  <div className="cart-item-quantity">
+                    <button className="quantity-button" onClick={() => addToCart(item)}>
+                      +
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button className="quantity-button">
+                      -
+                    </button>
+                  </div>
+                </div>
               </div>
-            ))
-          ) : (
-            <p>Your cart is empty!</p>
-          )}
+            </div>
+          ))}
         </div>
+      )}
+
+      {cart.length > 0 && (
+        <>
+          <div className="cart-total">Total: ₱{totalPrice.toFixed(2)}</div>
+          <button className="checkout-button">Proceed to Checkout</button>
+        </>
       )}
     </div>
   );
