@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { db, auth } from "../firebase/firebase";
+import { auth, db } from "../firebase/firebase";
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 
 const CartContext = createContext();
@@ -65,7 +65,7 @@ const CartProvider = ({ children }) => {
                 });
             }
 
-            // Update local cart state after Firestore update
+            // Updates the local cart state after Firestore update
             setCart((prevCart) => [...prevCart, itemToAdd]);
         } catch (error) {
             console.error("Error adding to cart: ", error);

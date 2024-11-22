@@ -7,12 +7,11 @@ import aboutCover from "../images/about-cover.png";
 export default function About() {
   return (
     <>
-      <img src={aboutCover} alt="about cover page" className="aboutcover" />
+  
       <div className="about-container">
         <div className="about-content">
-          <h1>About Santayo?</h1>
           <div className="about-content-child">
-            <h2 className="about-title">Mission</h2>
+            <h2 className="about-title">About Us</h2>
             <p>
               Santayo? is an innovative platform designed to showcase the rich
               variety of delectable and affordable local dishes served in the
@@ -25,26 +24,29 @@ export default function About() {
             </p>
             <br></br>
             <br></br>
-            <h2 className="about-title">Meet Our Team</h2>
 
-            <div className="devpic-container">
-              <div className="devpic-wrapper">
-                <img src={joyDev} alt="Dev Pic" className="devpics"></img>
-                <div>
-                  <label>Joylynne Esportuno</label>
-                </div>
-              </div>
-              <div className="devpic-wrapper">
-                <img src={kcDev} alt="Dev Pic" className="devpics"></img>
-                <div>
-                  <label>Krizha Cortez</label>
-                </div>
-              </div>
-              <div className="devpic-wrapper">
-                <img src={jupiDev} alt="Dev Pic" className="devpics"></img>
-                <div>
-                  <label>Jethro Lagmay</label>
-                </div>
+            <div style={{marginTop:"-3%"}}>
+                <h2 className="about-title">Meet Our Team</h2>
+
+                <div className="devpic-container" style={{marginTop:"-4%"}}>
+                  <div className="devpic-wrapper">
+                    <img src={joyDev} alt="Dev Pic" className="devpics"></img>
+                    <div>
+                      <label>Joylynne Esportuno</label>
+                    </div>
+                  </div>
+                  <div className="devpic-wrapper" >
+                    <img src={kcDev} alt="Dev Pic" className="devpics"></img>
+                    <div>
+                      <label>Krizha Cortez</label>
+                    </div>
+                  </div>
+                  <div className="devpic-wrapper">
+                    <img src={jupiDev} alt="Dev Pic" className="devpics"></img>
+                    <div>
+                      <label>Jethro Lagmay</label>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>

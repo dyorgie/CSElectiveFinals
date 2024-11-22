@@ -1,35 +1,19 @@
 import "./Contact.css";
-import { addReview } from "../services/reviewServices";
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const messageRef = useRef();
-
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const review = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      message: messageRef.current.value,
-    };
-
-    addReview(review);
-    navigate("/");
-  };
-
   return (
     <>
+      <img
+        // src={contactCover}
+        alt="contact cover"
+        className="contact-cover"
+      ></img>
       <div className="contact-content">
         <h1>Contact us!</h1>
       </div>
       <div className="contact-container"></div>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form className="contact-form">
         <div className="input-box">
           <label className="nameLabel">Name</label>
           <input
@@ -37,7 +21,6 @@ export default function Contact() {
             className="field"
             placeholder="Enter your name"
             required
-            ref={nameRef}
           ></input>
         </div>
 
@@ -48,22 +31,20 @@ export default function Contact() {
             className="field"
             placeholder="Enter your email address"
             required
-            ref={emailRef}
           ></input>
         </div>
 
         <div className="input-box">
-          <label className="messageLabel">Your Message</label>
+          <label className="emailLabel">Your Message</label>
           <textarea
             name=""
             id=""
             className="fieldMessage"
             placeholder="Enter your message"
             required
-            ref={messageRef}
           ></textarea>
         </div>
-        <button>Send Message</button>
+        <button type="submit">Send Message</button>
       </form>
     </>
   );

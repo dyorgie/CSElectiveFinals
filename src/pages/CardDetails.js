@@ -10,6 +10,8 @@ function CardDetails() {
     const { id } = useParams();
     const cardDetail = carinderiaData.find(card => card.id === Number(id));
     
+    
+
     // starting coordinates
     const fallbackLat = 14.629463;
     const fallbackLng = 121.041962;
