@@ -54,7 +54,7 @@ export default function Login() {
               </button>
             )}
 
-            {error && <p>{error}</p>}
+            {error && <p className="error-message" style={{color:"white", fontStyle:"italic"}}>Invalid Credentials!</p>}
 
             <p style={{ fontFamily: "Lato, serif", color: "white" }}>
               Don't have an account?{" "}

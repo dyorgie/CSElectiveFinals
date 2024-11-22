@@ -57,7 +57,7 @@ export default function Register() {
             </button>
           )}
 
-          {error && <p>{error}</p>}
+          {error && <p style={{color:"white", fontStyle:"italic"}}>Email already exists!</p>}
 
           <p style={{ color: "white", fontFamily: "Lato, serif" }}>
             Already have an account?{" "}
