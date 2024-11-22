@@ -9,19 +9,22 @@ export default function Register() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const [error, setError] = useState(null);
+  const [isPending, setIsPending] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsPending(true);
     try {
       await create_user(
         emailRef.current.value,
         passwordRef.current.value,
         usernameRef.current.value
       );
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       setError(err.message);
+      setIsPending(false);
     }
   };
 
@@ -47,12 +50,20 @@ export default function Register() {
             <input type="text" placeholder="Username" ref={usernameRef}></input>
           </div>
 
-          <button>Sign up</button>
+          {!isPending && <button className="btn">Sign Up</button>}
+          {isPending && (
+            <button className="btn" disabled>
+              Loading...
+            </button>
+          )}
 
           {error && <p>{error}</p>}
 
-          <p style={{color:"white", fontFamily:"Lato, serif"}}>
-            Already have an account? <NavLink to="/login" style={{color:"white"}}>Login Here!</NavLink>
+          <p style={{ color: "white", fontFamily: "Lato, serif" }}>
+            Already have an account?{" "}
+            <NavLink to="/login" style={{ color: "white" }}>
+              Login Here!
+            </NavLink>
           </p>
         </form>
       </div>
