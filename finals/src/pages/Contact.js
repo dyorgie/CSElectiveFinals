@@ -1,5 +1,4 @@
 import "./Contact.css";
-import contactCover from "../images/contact-cover.png";
 import { addReview } from "../services/reviewService";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -25,11 +24,6 @@ export default function Contact() {
 
   return (
     <>
-      <img
-        src={contactCover}
-        alt="contact cover"
-        className="contact-cover"
-      ></img>
       <div className="contact-content">
         <h1>Contact us!</h1>
       </div>
@@ -59,7 +53,7 @@ export default function Contact() {
         </div>
 
         <div className="input-box">
-          <label className="emailLabel">Your Message</label>
+          <label className="messageLabel">Your Message</label>
           <textarea
             name=""
             id=""

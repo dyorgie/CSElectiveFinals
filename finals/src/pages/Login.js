@@ -26,7 +26,6 @@ export default function Login() {
       <div className="login-parent-container">
         <div className="login-child-container">
           <form className="form-container" onSubmit={handleSubmit}>
-            <div className="closeBtn-cont"></div>
             <h1 className="form-title">Login to Santayo</h1>
             <div className="email-container">
               <input type="email" placeholder="Email" ref={email}></input>
@@ -43,9 +42,9 @@ export default function Login() {
             </button>
             {error && <p>{error}</p>}
 
-            <p>
+            <p style={{fontFamily:"Lato, serif", color:"white"}}>
               Don't have an account?{" "}
-              <NavLink to="/register">Register Here!</NavLink>
+              <NavLink to="/register" style={{color:"white"}}>Register Here!</NavLink>
             </p>
           </form>
         </div>
