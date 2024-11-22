@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+
+.card-detail-container {
+    max-width: 70%; 
+    margin: 20px auto; 
+    margin-top: 100px; 
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Lato", serif;
+    font-weight: 400;
+    color:#696969;
+    height: calc(80vh - 100px); 
+    overflow-y: auto; 
+}
+
+.card-detail-container h1{
+    font-family: "Playfair Display", sans-serif;
+    text-align: center;
+    font-weight:600;
+    color:rgb(220,68,22,85%) ;
+    font-size: 2.5rem;
+}
+
+.bi-arrow-left{
+    font-size: 190%;
+
+    margin:0 50px;
+    color:rgb(220,68,22,85%) ;
+    cursor: pointer;
+}
+
+
+.menu-list {
+    display: flex;
+    flex-direction: column; 
+    margin: 20px 0; 
+}
+
+.menu-card {
+    background-color: #f4f4f4; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 15px; 
+    margin: 10px 50px; 
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.menu-item {
+    font-size: 18px; 
+    margin: 0; 
+}
+
+.price {
+    font-weight: bold;
+    color: #eb7311; 
+}
+.menu-category {
+    margin-bottom: 20px; 
+}
+
+.category-title {
+    text-align: center;
+    font-weight: bold;
+    color: #eb7311; 
+    margin-bottom: 10px;
+}
+
+#map {
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 601px) {
+    .card-detail-container {
+        margin-top: 100px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .card-detail-container {
+        margin-top: 80px; 
+    }
+}
+
+.reviewLink{
+    margin-top:-6%;
+    color:#eb7311;
+    display:flex;
+    justify-content: end;
+}
+
+.reviewRoute{
+    color:#eb7311;
+}
