@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import "../navigation/Navbar.css";
+import "./Navbar.css";
 import { logout } from "../services/authServices";
 
 export default function Navbar() {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-  
 
   const handleLogout = async () => {
     await logout();
@@ -32,7 +31,7 @@ export default function Navbar() {
                   About
                 </NavLink>
                 <NavLink
-                  to="/carinderia"
+                  to="/carinderias"
                   className="nav-link"
                   activeClassName="active"
                 >
